@@ -1,22 +1,14 @@
-"use client"
+
 import React from 'react'
-import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { LayoutDashboard } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+
 
 const Header = () => {
-  const { isSignedIn } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isSignedIn) {
-      router.refresh(); 
-    }
-  }, [isSignedIn, router]);
+ 
   return (
     <header className="fixed top-0 w-full border-b bg-gradient-to-b from-gray-900 to-black z-[1000]">
 
